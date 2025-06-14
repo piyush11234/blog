@@ -44,7 +44,7 @@ export default function Signup() {
     }
     console.log(user);
     try {
-      const url = 'https://blog-dqxu.onrender.com/user/register';
+      const url = 'https://blog-dqxu.onrender.com/api/user/register';
       const response = await fetch(url, {
         method: 'POST',
         headers: {

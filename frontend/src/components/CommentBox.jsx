@@ -58,7 +58,7 @@ export default function CommentBox({ selectedBlog }) {
 
     try {
       const res = await axios.post(
-        `https://blog-dqxu.onrender.com/comment/${selectedBlog._id}/create`,
+        `https://blog-dqxu.onrender.com/api/comment/${selectedBlog._id}/create`,
         { content: trimmed },
         { headers: { "Content-Type": "application/json" }, withCredentials: true }
       );
@@ -80,7 +80,7 @@ export default function CommentBox({ selectedBlog }) {
 
     try {
       const res = await axios.post(
-        `https://blog-dqxu.onrender.com/comment/${selectedBlog._id}/create`,
+        `https://blog-dqxu.onrender.com/api/comment/${selectedBlog._id}/create`,
         { content: trimmed, parentId },
         { headers: { "Content-Type": "application/json" }, withCredentials: true }
       );
@@ -100,7 +100,7 @@ export default function CommentBox({ selectedBlog }) {
   const handleLike = async (commentId) => {
     try {
       const res = await axios.get(
-        `https://blog-dqxu.onrender.com/comment/${commentId}/like`,
+        `https://blog-dqxu.onrender.com/api/comment/${commentId}/like`,
         { withCredentials: true }
       );
 
@@ -120,7 +120,7 @@ export default function CommentBox({ selectedBlog }) {
 
     try {
       const res = await axios.put(
-        `https://blog-dqxu.onrender.com/comment/${commentId}/edit`,
+        `https://blog-dqxu.onrender.com/api/comment/${commentId}/edit`,
         { content: trimmed },
         { headers: { "Content-Type": "application/json" }, withCredentials: true }
       );
@@ -139,7 +139,7 @@ export default function CommentBox({ selectedBlog }) {
 
   const handleDelete = async (commentId) => {
     try {
-      const res = await axios.delete(`https://blog-dqxu.onrender.com/comment/${commentId}/delete`, {
+      const res = await axios.delete(`https://blog-dqxu.onrender.com/api/comment/${commentId}/delete`, {
         withCredentials: true
       });
 
@@ -155,7 +155,7 @@ export default function CommentBox({ selectedBlog }) {
 
   const fetchAllComments = async () => {
     try {
-      const res = await axios.get(`https://blog-dqxu.onrender.com/comment/${selectedBlog._id}/comment/all`);
+      const res = await axios.get(`https://blog-dqxu.onrender.com/api/comment/${selectedBlog._id}/comment/all`);
       dispatch(setComment(res.data.comments));
     } catch (error) {
       console.error("Failed to load comments", error);

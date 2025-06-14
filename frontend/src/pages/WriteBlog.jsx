@@ -33,7 +33,7 @@ export default function WriteBlog() {
   const createBlogHandler = async () => {
     try {
       dispatch(setLoading(true))
-      const res = await axios.post('https://blog-dqxu.onrender.com/blog/', { title, category }, {
+      const res = await axios.post('https://blog-dqxu.onrender.com/api/blog/', { title, category }, {
         headers: {
           "Content-Type": "application/json"
         },
