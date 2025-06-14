@@ -11,7 +11,7 @@ export default function Blogs() {
   useEffect(() => {
     const getAllPublishedBlog = async () => {
       try {
-        const res = await axios.get(`http://localhost:8080/api/blog/get-published-blogs`, { withCredentials: true })
+        const res = await axios.get(`https://blog-dqxu.onrender.com/blog/get-published-blogs`, { withCredentials: true })
         if (res.data.success) {
           dispatch(setBlog(res.data.blogs))
         }

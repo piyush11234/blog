@@ -19,7 +19,7 @@ const TotalProperty = () => {
   // Fetch blogs owned by the logged-in user and store in Redux state
   const getOwnBlog = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/api/blog/get-own-blogs`, { withCredentials: true })
+      const res = await axios.get(`https://blog-dqxu.onrender.com/blog/get-own-blogs`, { withCredentials: true })
       if (res.data.success) {
         // Dispatch the blogs data to Redux store
         dispatch(setBlog(res.data.blogs))
@@ -32,7 +32,7 @@ const TotalProperty = () => {
   // Fetch total number of comments across user's blogs
   const getTotalComments = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/api/comment/my-blogs/comments`, { withCredentials: true })
+      const res = await axios.get(`https://blog-dqxu.onrender.com/comment/my-blogs/comments`, { withCredentials: true })
       if (res.data.success) {
         // Set total comments count in local state
         setTotalComments(res.data.totalComments)
@@ -45,7 +45,7 @@ const TotalProperty = () => {
   // Fetch total number of likes across user's blogs
   const getTotalLikes = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/api/blog/my-blog-likes`, { withCredentials: true })
+      const res = await axios.get(`https://blog-dqxu.onrender.com/blog/my-blog-likes`, { withCredentials: true })
       if (res.data.success) {
         // Set total likes count in local state
         setTotalLikes(res.data.totalLikes)

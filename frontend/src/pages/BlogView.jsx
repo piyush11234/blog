@@ -68,7 +68,7 @@ export default function BlogView() {
     const likeOrDislikeHandler = async () => {
         try {
             const actions = liked ? 'dislike' : 'like'
-            const res = await axios.get(`http://localhost:8080/api/blog/${selectedBlog._id}/${actions}`, { withCredentials: true })
+            const res = await axios.get(`https://blog-dqxu.onrender.com/blog/${selectedBlog._id}/${actions}`, { withCredentials: true })
 
             if (res.data.success) {
                 const updatedLikes = liked ? blogLike - 1 : blogLike + 1;

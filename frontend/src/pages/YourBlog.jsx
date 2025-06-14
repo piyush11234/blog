@@ -36,7 +36,7 @@ export default function YourBlog() {
 
   const getOwnBlogs = async () => {
     try {
-      const res = await axios.get('http://localhost:8080/api/blog/get-own-blogs', { withCredentials: true })
+      const res = await axios.get('https://blog-dqxu.onrender.com/blog/get-own-blogs', { withCredentials: true })
       if (res.data.success) {
         dispatch(setBlog(res.data.blogs))
 
@@ -50,7 +50,7 @@ export default function YourBlog() {
 
   const deleteBlog = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:8080/api/blog/delete/${id}`, { withCredentials: true })
+      const res = await axios.delete(`https://blog-dqxu.onrender.com/blog/delete/${id}`, { withCredentials: true })
 
       const updatedBlogData = blog.filter((blogItem) => blogItem?._id !== id);
       dispatch(setBlog(updatedBlogData))

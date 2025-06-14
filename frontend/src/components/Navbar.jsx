@@ -58,7 +58,7 @@ export default function Navbar() {
   // Logout function
   const logoutHandler = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/api/user/logout`)
+      const res = await axios.get(`https://blog-dqxu.onrender.com/user/logout`)
       if (res.data.success) {
         dispatch(setUser(null))
         navigate("/")

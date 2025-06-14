@@ -7,7 +7,7 @@ const PopularAuthors = () => {
     const [popularUser, setPopularUser] = useState([])
     const getAllUsers = async () => {
         try {
-            const res = await axios.get(`http://localhost:8080/api/user/all-users`)
+            const res = await axios.get(`https://blog-dqxu.onrender.com/user/all-users`)
             if (res.data.success) {
                 setPopularUser(res.data.users)
             }

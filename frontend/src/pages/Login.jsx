@@ -43,7 +43,7 @@ export default function Login() {
 
     // try {
     //   dispatch(setLoading(true));
-    //   const url = 'http://localhost:8080/api/input/login';
+    //   const url = 'https://blog-dqxu.onrender.com/input/login';
     //   const response = await fetch(url, {
     //     method: 'POST',
     //     headers: { 'Content-Type': 'application/json' },
@@ -66,7 +66,7 @@ export default function Login() {
 
     try{
       dispatch(setLoading(true));
-      const res=await axios.post('http://localhost:8080/api/user/login',input,{
+      const res=await axios.post('https://blog-dqxu.onrender.com/user/login',input,{
         headers:{
           'Content-Type': 'application/json'
         },

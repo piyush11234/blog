@@ -65,7 +65,7 @@ export default function UpdateBlog() {
         formData.append('file', blogData.thumbnail);
         try {
             dispatch(setLoading(true));
-            const res = await axios.put(`http://localhost:8080/api/blog/${id}`, formData, {
+            const res = await axios.put(`https://blog-dqxu.onrender.com/blog/${id}`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 },
@@ -88,7 +88,7 @@ export default function UpdateBlog() {
     const togglePublishUnpublish = async (action) => {
         try {
             const res = await axios.patch(
-                `http://localhost:8080/api/blog/${id}`,
+                `https://blog-dqxu.onrender.com/blog/${id}`,
                 { isPublished: action === "true" }, // send correct value
                 {
                     withCredentials: true,
@@ -111,7 +111,7 @@ export default function UpdateBlog() {
 
     const deleteBlog = async (id) => {
         try {
-            const res = await axios.delete(`http://localhost:8080/api/blog/delete/${id}`, { withCredentials: true })
+            const res = await axios.delete(`https://blog-dqxu.onrender.com/blog/delete/${id}`, { withCredentials: true })
             if (res.data.success) {
                 const updatedBlogData = blog.filter((blogItem) => blogItem?._id !== id);
                 dispatch(setBlog(updatedBlogData))

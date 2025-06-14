@@ -14,7 +14,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({extended:true}));
 // ✅ Middleware
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://blog-dqxu.onrender.com',
   credentials: true
 }));
 
